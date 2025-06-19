@@ -30,6 +30,7 @@ type Token struct {
 	Data         []byte // Data could be a CharData or a CDATA, or maybe a RawToken if a tag starts with "<?" or "<!" (except "<![CDATA").
 	SelfClosing  bool   // True when a tag ends with "/>" e.g. <c r="E3" s="1" />. Also true when a tag starts with "<?" or "<!" (except "<![CDATA").
 	IsEndElement bool   // True when a tag start with "</" e.g. </gpx> or </gpxtpx:atemp>.
+	WasCDATA     bool
 }
 
 // IsEndElementOf checks whether the given token represent a

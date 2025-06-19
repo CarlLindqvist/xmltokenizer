@@ -103,8 +103,9 @@ func TestTokenWithInmemXML(t *testing.T) {
 					IsEndElement: true,
 				},
 				{
-					Name: xmltokenizer.Name{Prefix: []byte("tag"), Local: []byte("name"), Full: []byte("tag:name")},
-					Data: []byte("Some text here."),
+					Name:     xmltokenizer.Name{Prefix: []byte("tag"), Local: []byte("name"), Full: []byte("tag:name")},
+					Data:     []byte("Some text here."),
+					WasCDATA: true,
 				},
 				{
 					Name:         xmltokenizer.Name{Prefix: []byte("tag"), Local: []byte("name"), Full: []byte("tag:name")},
@@ -319,24 +320,27 @@ func TestTokenWithSmallXMLFiles(t *testing.T) {
 			tokenHeader,
 			{Name: xmltokenizer.Name{Local: []byte("content"), Full: []byte("content")}},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("text"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("text"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
 				IsEndElement: true,
 			},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("<element>text</element>"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("<element>text</element>"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
 				IsEndElement: true,
 			},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("<element>text</element>"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("<element>text</element>"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
@@ -351,24 +355,27 @@ func TestTokenWithSmallXMLFiles(t *testing.T) {
 			tokenHeader,
 			{Name: xmltokenizer.Name{Local: []byte("content"), Full: []byte("content")}},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("text"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("text"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
 				IsEndElement: true,
 			},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("<element>text</element>"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("<element>text</element>"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
 				IsEndElement: true,
 			},
 			{
-				Name: xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
-				Data: []byte("<element>text</element>"),
+				Name:     xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},
+				Data:     []byte("<element>text</element>"),
+				WasCDATA: true,
 			},
 			{
 				Name:         xmltokenizer.Name{Local: []byte("data"), Full: []byte("data")},

@@ -290,6 +290,7 @@ func (t *Tokenizer) clearToken() {
 	t.token.Data = nil
 	t.token.SelfClosing = false
 	t.token.IsEndElement = false
+	t.token.WasCDATA = false
 }
 
 // consumeNonTagIdentifier consumes identifier starts with "<?" or "<!", make it raw data.
@@ -375,6 +376,7 @@ func (t *Tokenizer) consumeCharData(b []byte) {
 	b = trimPrefix(b)
 	if len(b) >= len(prefix) && string(b[:len(prefix)]) == prefix {
 		b = b[len(prefix):]
+		t.token.WasCDATA = true
 	}
 	if end := len(b) - len(suffix); end >= 0 && string(b[end:]) == suffix {
 		b = b[:end]
