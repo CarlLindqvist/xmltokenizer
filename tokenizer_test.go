@@ -12,11 +12,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/CarlLindqvist/xmltokenizer"
+	"github.com/CarlLindqvist/xmltokenizer/internal/gpx"
+	"github.com/CarlLindqvist/xmltokenizer/internal/xlsx"
+	"github.com/CarlLindqvist/xmltokenizer/internal/xlsx/schema"
 	"github.com/google/go-cmp/cmp"
-	"github.com/muktihari/xmltokenizer"
-	"github.com/muktihari/xmltokenizer/internal/gpx"
-	"github.com/muktihari/xmltokenizer/internal/xlsx"
-	"github.com/muktihari/xmltokenizer/internal/xlsx/schema"
 )
 
 var tokenHeader = xmltokenizer.Token{Data: []byte(`<?xml version="1.0" encoding="UTF-8"?>`), SelfClosing: true}
