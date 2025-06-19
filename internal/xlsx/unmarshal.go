@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"io"
 
-	"github.com/muktihari/xmltokenizer"
-	"github.com/muktihari/xmltokenizer/internal/xlsx/schema"
+	"github.com/CarlLindqvist/xmltokenizer"
+	"github.com/CarlLindqvist/xmltokenizer/internal/xlsx/schema"
 )
 
 func UnmarshalWithXMLTokenizer(r io.Reader) (schema.SheetData, error) {

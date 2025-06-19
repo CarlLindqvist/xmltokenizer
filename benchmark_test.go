@@ -11,9 +11,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/muktihari/xmltokenizer"
-	"github.com/muktihari/xmltokenizer/internal/gpx"
-	"github.com/muktihari/xmltokenizer/internal/xlsx"
+	"github.com/CarlLindqvist/xmltokenizer"
+	"github.com/CarlLindqvist/xmltokenizer/internal/gpx"
+	"github.com/CarlLindqvist/xmltokenizer/internal/xlsx"
 )
 
 func BenchmarkToken(b *testing.B) {

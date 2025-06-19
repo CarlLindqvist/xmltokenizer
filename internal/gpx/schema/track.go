@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/muktihari/xmltokenizer"
+	"github.com/CarlLindqvist/xmltokenizer"
 )
 
 type Track struct {
